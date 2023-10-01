@@ -1,0 +1,319 @@
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .w-layout-blockcontainer {
+    max-width: none;
+  }
+}
+
+.f-account-link {
+  color: #160042;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.f-paragraph-small {
+  letter-spacing: -.01em;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.f-paragraph-small.f-text-color-gray-500 {
+  color: #6b7094;
+}
+
+.f-success-message {
+  color: #006638;
+  letter-spacing: -.03em;
+  background-color: #ebfff6;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.f-button-neutral {
+  min-height: 48px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -.02em;
+  background-color: #160042;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color .3s;
+  display: flex;
+}
+
+.f-button-neutral:hover {
+  background-color: #282556;
+}
+
+.f-account-form-button {
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+}
+
+.f-field-input {
+  min-height: 48px;
+  border: 1px solid #e4e6f1;
+  border-radius: 8px;
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  transition: all .2s;
+}
+
+.f-field-input:focus {
+  border-color: #b6b9ce;
+}
+
+.f-field-input::-ms-input-placeholder {
+  color: #6b7094;
+}
+
+.f-field-input::placeholder {
+  color: #6b7094;
+}
+
+.f-field-label {
+  color: #160042;
+  letter-spacing: -.01em;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.f-field-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  margin-bottom: 23px;
+}
+
+.f-account-input-grid {
+  grid-template-columns: 1fr;
+}
+
+.f-account-form-block {
+  margin-bottom: 42px;
+}
+
+.f-text-color-gray-500 {
+  color: #6b7094;
+}
+
+.f-margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.f-icon-regular {
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  transition: color .2s;
+  display: flex;
+}
+
+.f-account-social-icon {
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  min-width: 48px;
+  color: #160042;
+  border: 1px solid #f3f5fb;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .3s;
+  display: flex;
+}
+
+.f-account-social-icon:hover {
+  background-color: #f3f5fb;
+}
+
+.f-account-social-wrapper {
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.f-paragraph-regular {
+  letter-spacing: -.02em;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.f-h5-heading {
+  color: #160042;
+  letter-spacing: -.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+.f-margin-bottom-08 {
+  margin-bottom: 8px;
+}
+
+.f-account-content-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.f-account-container-r {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 5%;
+  display: flex;
+  position: relative;
+}
+
+.f-image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.f-account-image-wrapper {
+  width: 50%;
+  background-color: #f3f5fb;
+}
+
+.f-account-section {
+  height: 100vh;
+  min-height: 900px;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+
+.body {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.f-button-primary {
+  width: 100%;
+  min-height: 48px;
+  color: #fff;
+  letter-spacing: -.02px;
+  white-space: nowrap;
+  background-color: #160042;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color .3s;
+  display: flex;
+}
+
+.f-button-primary:hover {
+  background-color: #282556;
+}
+
+.f-button-primary.left {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.f-button-primary.right {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.f-field-wrapper-2 {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.paragraph {
+  width: 450px;
+  height: 500px;
+  border: 1px solid #000;
+  padding: 15px;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.form {
+  width: 100%;
+}
+
+.div-block {
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .f-account-container-r {
+    width: 60%;
+  }
+
+  .f-account-image-wrapper {
+    width: 40%;
+  }
+
+  .f-account-section {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .f-account-container-r {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .f-account-image-wrapper {
+    width: 100%;
+    height: 600px;
+  }
+
+  .f-account-section {
+    flex-direction: column;
+  }
+}

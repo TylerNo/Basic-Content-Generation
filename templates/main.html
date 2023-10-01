@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACG GUI</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="{{ url_for('static', filename='css/normalize2.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/webflow2.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/acg-gui.webflow2.css') }}" rel="stylesheet" type="text/css">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    function updateConsole() {
+        $.get("/logs", function(data) {
+            $(".paragraph").text(data.logs.join("\n"));
+            // Auto-scroll to the bottom
+            $(".paragraph").scrollTop($(".paragraph")[0].scrollHeight);
+        });
+    }
+
+    setInterval(updateConsole, 1000);  // Update every 2 seconds
+
+    $("#startButton").click(function(e) {
+        e.preventDefault();
+        $.post("/start", {}, function(data) {
+            alert(data.message);
+        });
+    });
+
+    $("#stopButton").click(function(e) {
+        e.preventDefault();
+        $.post("/stop", {}, function(data) {
+            alert(data.message);
+        });
+    });
+});
+
+</script>
+<body class="body">
+  <div class="w-layout-blockcontainer container w-container">
+    <h1 class="heading">Auto Content Generator</h1>
+    <p class="paragraph" style="white-space: pre-wrap; overflow-y: auto; height: 200px;"></p>
+    <div class="div-block">
+      <a href="#" id="startButton" class="f-button-primary left w-inline-block">
+          <div>Start</div>
+      </a>
+      <a href="#" id="stopButton" class="f-button-primary right w-inline-block">
+          <div>Stop</div>
+      </a>
+    </div>
+    <div class="div-block">
+      <a href="{{ url_for('settings') }}" class="f-button-primary w-inline-block">
+          <div>Settings</div>
+      </a>
+    </div>
+  </div>
+</body>
+
+</body>
+</html>

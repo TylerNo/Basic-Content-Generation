@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>ACG GUI</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="{{ url_for('static', filename='css/normalize2.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/webflow2.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/acg-gui.webflow2.css') }}" rel="stylesheet" type="text/css">
+</head>
+<script>
+$(document).ready(function() {
+
+    // Load config when the page is ready
+    $.get("/get_config", function(data) {
+        $(".paragraph").text(JSON.stringify(data.config, null, 4));
+    });
+
+    $("#saveButton").click(function(e) {
+        e.preventDefault();
+        let new_config = $(".paragraph").text();
+        $.ajax({
+            url: '/save_config',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({'config': JSON.parse(new_config)}),
+            success: function(data) {
+                window.location.href = '/main_page';  // Redirect to the main page
+            }
+        });
+    });  // This closing parenthesis and semicolon were missing
+
+    $("#update_button").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/update_code',
+            type: 'POST',
+            success: function(data) {
+                alert(data.message);
+            },
+            error: function() {
+                alert('Failed to update code');
+            }
+        });
+    });
+});
+</script>
+
+<style>
+  .formatted-json {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+</style>
+<body class="body">
+  <div class="w-layout-blockcontainer container w-container">
+      <h1 class="heading">Settings (Configuration)</h1>
+      <div class="paragraph formatted-json" contenteditable="true" style="white-space: pre-wrap; overflow-y: auto; height: 400px;"></div>
+      <div class="div-block">
+          <a href="#" id="saveButton" class="f-button-primary w-inline-block">
+              <div>Save</div>
+          </a>
+      </div>
+      <div class="div-block">
+          <a href="#" id="update_button" class="f-button-primary w-inline-block">
+              <div>Update Files</div>
+          </a>
+      </div>
+  </div>
+</body>
+</html>
